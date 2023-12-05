@@ -6,7 +6,9 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/utils.dart';
 import 'package:ionicons/ionicons.dart';
 
+import 'widgets/home_category_selector.dart';
 import 'widgets/home_main_selector.dart';
+import 'widgets/home_recipes_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,30 +22,18 @@ class HomeScreen extends StatelessWidget {
         width: Get.height,
         child: Column(
           children: [
+            SizedBox(height: Get.height * 0.03),
             // main selector
             const HomeMainSelector(),
-            const Divider(),
-            // category selector
-            Expanded(
-              flex: 1,
-              child: Container(
-                decoration: const BoxDecoration(color: AppColors.black),
-                child: const Expanded(
-                  child: Row(),
-                ),
-              ),
+            Padding(
+              padding: EdgeInsets.only(top: Get.height * 0.01),
+              child: const Divider(color: AppColors.lightGrey),
             ),
-            const Divider(),
             // category selector
-            Expanded(
-              flex: 10,
-              child: Container(
-                decoration: const BoxDecoration(color: AppColors.black),
-                child: const Expanded(
-                  child: Row(),
-                ),
-              ),
-            ),
+            const HomeCategorySelector(),
+            const Divider(color: AppColors.lightGrey),
+            // category selector
+            const HomeRecipesView(),
           ],
         ),
       ),

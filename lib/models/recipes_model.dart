@@ -1,27 +1,4 @@
 class RecipesModel {
-  List<Recipes>? recipes;
-
-  RecipesModel({this.recipes});
-
-  RecipesModel.fromJson(Map<String, dynamic> json) {
-    if (json['recipes'] != null) {
-      recipes = <Recipes>[];
-      json['recipes'].forEach((v) {
-        recipes!.add(Recipes.fromJson(v));
-      });
-    }
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    if (recipes != null) {
-      data['recipes'] = recipes!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
-}
-
-class Recipes {
   int? id;
   String? name;
   String? image;
@@ -29,7 +6,7 @@ class Recipes {
   List<String>? ingredients;
   String? instructions;
 
-  Recipes(
+  RecipesModel(
       {this.id,
       this.name,
       this.image,
@@ -37,7 +14,7 @@ class Recipes {
       this.ingredients,
       this.instructions});
 
-  Recipes.fromJson(Map<String, dynamic> json) {
+  RecipesModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     image = json['image'];

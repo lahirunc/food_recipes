@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Chicken"
+    },
+    {
+      "id": 2,
+      "name": "Beef"
+    },
+    {
+      "id": 3,
+      "name": "Fish"
+    },
+    {
+      "id": 4,
+      "name": "Pork"
+    },
+    {
+      "id": 5,
+      "name": "Lamb"
+    },
+    {
+      "id": 6,
+      "name": "Veg"
+    }
+  ]
+}

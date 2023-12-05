@@ -8,8 +8,13 @@ class AppStrings {
   static const String profiloString = 'Profilo';
 
   //* home
+  // main selector
   static const String pianoString = 'Piano';
   static const String listaDellaSpesaString = 'Lista della speca';
   static const String ricetteString = 'Ricette';
+  // category
+  static const String allString = 'All';
+
+  // item
   static const String viewString = 'View';
 }

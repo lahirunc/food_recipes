@@ -14,6 +14,7 @@ class HomeMainSelector extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      // grey background container
       child: Container(
         decoration: BoxDecoration(
           color: AppColors.lightGrey,
@@ -30,35 +31,38 @@ class HomeMainSelector extends StatelessWidget {
             return Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                // selectables
                 for (int i = 0; i < _.mainSelectorList.length; i++) ...[
-                  GestureDetector(
-                    onTap: () => _.selectedMainIndexUpdate(i),
-                    child: Container(
-                      margin:
-                          EdgeInsets.symmetric(vertical: Get.height * 0.002),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: Get.width * 0.068,
-                        vertical: Get.height * 0.01,
-                      ),
-                      decoration: BoxDecoration(
-                        color:
-                            _.selectedMainIndex == i ? AppColors.primary : null,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        _.mainSelectorList[i],
-                        style: AppStyles.boldText16FStyle(
-                          color: _.selectedMainIndex == i
-                              ? AppColors.lightGrey
-                              : AppColors.black,
-                        ),
-                      ),
-                    ),
-                  ),
+                  buildSelector(_, i),
                 ],
               ],
             );
           },
+        ),
+      ),
+    );
+  }
+
+  GestureDetector buildSelector(HomeController _, int i) {
+    return GestureDetector(
+      onTap: () => _.updateSelectedMainIndex(i),
+      // selection indicator container
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: Get.height * 0.002),
+        padding: EdgeInsets.symmetric(
+          horizontal: Get.width * 0.075,
+          vertical: Get.height * 0.01,
+        ),
+        decoration: BoxDecoration(
+          color: _.selectedMainIndex == i ? AppColors.primary : null,
+          borderRadius: BorderRadius.circular(30),
+        ),
+        // text
+        child: Text(
+          _.mainSelectorList[i],
+          style: AppStyles.boldText16FStyle(
+            color: _.selectedMainIndex == i ? AppColors.lightGrey : null,
+          ),
         ),
       ),
     );
