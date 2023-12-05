@@ -1,0 +1,180 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Spaghetti Bolognese",
+      "image": "https://sanremo.com.au/content/uploads/2017/05/Resized_San-Remo_Core-Range_13975_Spaghetti-Bolognese-900x600.jpg",
+      "category": "Beef",
+      "ingredients": [
+        "500g spaghetti",
+        "300g ground beef",
+        "1 onion",
+        "2 cloves garlic",
+        "400g crushed tomatoes",
+        "1 tsp oregano",
+        "1/2 tsp salt",
+        "1/4 tsp black pepper"
+      ],
+      "instructions": "Boil spaghetti according to package instructions. In a separate pan, cook ground beef until brown. Add chopped onion and minced garlic. Stir in crushed tomatoes, oregano, salt, and black pepper. Simmer for 15 minutes. Serve sauce over cooked spaghetti."
+    },
+    {
+      "id": 2,
+      "name": "Chicken Alfredo Pasta",
+      "image": "https://www.jessicagavin.com/wp-content/uploads/2019/08/chicken-alfredo-8-1200.jpg",
+      "category": "Chicken",
+      "ingredients": [
+        "250g fettuccine pasta",
+        "2 chicken breasts",
+        "1 cup heavy cream",
+        "1/2 cup grated Parmesan",
+        "2 cloves garlic",
+        "2 tbsp butter",
+        "Salt and pepper to taste"
+      ],
+      "instructions": "Cook fettuccine according to package instructions. Season chicken breasts with salt and pepper, then cook in a pan until fully cooked. In a separate pan, melt butter and sauté minced garlic. Add heavy cream, Parmesan, and sliced cooked chicken. Stir until the sauce thickens. Pour over cooked fettuccine and serve."
+    },
+    {
+      "id": 3,
+      "name": "Vegetarian Stir-Fry",
+      "image": "https://therecipecritic.com/wp-content/uploads/2019/09/Vegetable-Stir-Fry-Facebook-SEO-800-x-534.png",
+      "category": "Veg",
+      "ingredients": [
+        "1 cup broccoli florets",
+        "1 bell pepper, sliced",
+        "1 carrot, julienned",
+        "200g tofu, cubed",
+        "2 tbsp soy sauce",
+        "1 tbsp sesame oil",
+        "1 tsp ginger, minced",
+        "2 cloves garlic, minced"
+      ],
+      "instructions": "Stir-fry broccoli, bell pepper, and carrot in sesame oil until slightly tender. Add tofu and continue cooking. Mix soy sauce, ginger, and garlic, then pour over the vegetables and tofu. Stir well and cook for an additional 2 minutes. Serve over rice or noodles."
+    },
+    {
+      "id": 4,
+      "name": "Margherita Pizza",
+      "image": "https://simply-delicious-food.com/wp-content/uploads/2020/06/Grilled-Pizza-Margherita-3.jpg",
+      "category": "Veg",
+      "ingredients": [
+        "Pizza dough",
+        "1/2 cup tomato sauce",
+        "1 cup fresh mozzarella, sliced",
+        "Fresh basil leaves",
+        "Olive oil",
+        "Salt and pepper to taste"
+      ],
+      "instructions": "Roll out pizza dough and spread tomato sauce evenly. Top with mozzarella slices and fresh basil leaves. Drizzle with olive oil and sprinkle with salt and pepper. Bake in a preheated oven at 450°F (230°C) for 12-15 minutes or until crust is golden and cheese is bubbly."
+    },
+    {
+      "id": 5,
+      "name": "Grilled Salmon with Lemon-Dill Sauce",
+      "image": "https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fill,g_auto,w_1500,ar_3:2/cs%2F2023%2FK%2FLand-O-Lakes%2FLemon-Dill-Salmon%2FLandOLakes-Lemon-Dill-Salmon-3",
+      "category": "Fish",
+      "ingredients": [
+        "4 salmon fillets",
+        "2 lemons",
+        "2 tbsp fresh dill, chopped",
+        "2 tbsp olive oil",
+        "Salt and pepper to taste"
+      ],
+      "instructions": "Season salmon fillets with salt, pepper, and olive oil. Grill for 4-5 minutes on each side or until cooked through. In a bowl, mix the juice of one lemon with chopped dill. Drizzle the sauce over the grilled salmon before serving. Garnish with lemon slices."
+    },
+    {
+      "id": 6,
+      "name": "Beef Tacos",
+      "image": "https://litecravings.com/wp-content/uploads/2019/08/20190802_134908-e1564788394993.png",
+      "category": "Beef",
+      "ingredients": [
+        "1 lb ground beef",
+        "1 packet taco seasoning",
+        "8 taco shells",
+        "1 cup shredded lettuce",
+        "1 cup diced tomatoes",
+        "1 cup shredded cheddar cheese",
+        "Sour cream",
+        "Salsa"
+      ],
+      "instructions": "Cook ground beef in a pan, drain excess fat, and add taco seasoning according to package instructions. Heat taco shells in the oven. Fill each shell with seasoned beef, lettuce, tomatoes, and cheese. Top with sour cream and salsa before serving."
+    },
+    {
+      "id": 7,
+      "name": "Mushroom Risotto",
+      "image": "https://www.thespruceeats.com/thmb/ZEowdu14wmTI2tdAGQaAA1lw6YY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-mushroom-risotto-recipe-996005-hero-01-85f8cef9cf8042e8afbaa9d2e46c1fa8.jpg",
+      "category": "Veg",
+      "ingredients": [
+        "1 cup Arborio rice",
+        "1/2 cup white wine",
+        "4 cups vegetable broth",
+        "1 cup mushrooms, sliced",
+        "1 onion, finely chopped",
+        "2 tbsp olive oil",
+        "1/2 cup Parmesan cheese, grated"
+      ],
+      "instructions": "Sauté onions and mushrooms in olive oil until softened. Add Arborio rice and cook for 1-2 minutes. Pour in white wine and stir until mostly evaporated. Gradually add vegetable broth, one ladle at a time, stirring until absorbed. Continue until rice is creamy and cooked. Stir in Parmesan cheese and serve."
+    },
+    {
+      "id": 8,
+      "name": "Caesar Salad",
+      "image": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/b89f8de9-0f93-4976-b318-9ab04db353bc/Derivates/d3a08a3c-abb2-452e-9121-168f67c992c8.jpg",
+      "category": "Veg",
+      "ingredients": [
+        "Romaine lettuce",
+        "Croutons",
+        "Parmesan cheese, shaved",
+        "Caesar dressing",
+        "Salt and pepper to taste"
+      ],
+      "instructions": "Tear Romaine lettuce into bite-sized pieces. Toss with croutons and shaved Parmesan cheese. Drizzle with Caesar dressing and toss until evenly coated. Season with salt and pepper to taste. Serve immediately."
+    },
+    {
+      "id": 9,
+      "name": "Vegetable Curry",
+      "image": "https://foodhub.scene7.com/is/image/woolworthsltdprod/thai-veg-yellow-curry-1:Mobile-1300x1150",
+      "category": "Veg",
+      "ingredients": [
+        "2 cups mixed vegetables (e.g., potatoes, carrots, peas)",
+        "1 onion, finely chopped",
+        "2 tomatoes, diced",
+        "1/2 cup coconut milk",
+        "2 tbsp curry powder",
+        "1 tsp turmeric",
+        "1 tsp cumin",
+        "2 cloves garlic, minced"
+      ],
+      "instructions": "Sauté onions and garlic in a pan until softened. Add curry powder, turmeric, and cumin, stirring until fragrant. Add mixed vegetables and diced tomatoes. Pour in coconut milk and simmer until vegetables are tender. Serve over rice or with naan bread."
+    },
+    {
+      "id": 10,
+      "name": "Chocolate Chip Cookies",
+      "image": "https://www.marthastewart.com/thmb/1jygvpeBwdnfw1-2U84Nf7ju3JY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/soft-chewy-chocolate-chip-cookies-01-7004023-0819_horiz_0623-9b9a60be6a624d029aa1579d715e01e7.jpg",
+      "category": "Dessert",
+      "ingredients": [
+        "2 1/4 cups all-purpose flour",
+        "1/2 cup unsalted butter, softened",
+        "1 cup brown sugar",
+        "1/2 cup granulated sugar",
+        "2 eggs",
+        "1 tsp vanilla extract",
+        "1 tsp baking soda",
+        "1/2 tsp salt",
+        "2 cups chocolate chips"
+      ],
+      "instructions": "Preheat oven to 375°F (190°C). In a bowl, cream together butter, brown sugar, and granulated sugar. Beat in eggs one at a time, then stir in vanilla extract. In a separate bowl, combine flour, baking soda, and salt. Gradually add dry ingredients to the wet mixture. Fold in chocolate chips. Drop rounded tablespoons of dough onto ungreased baking sheets. Bake for 10-12 minutes or until golden brown."
+    },
+    {
+      "id": 11,
+      "name": "Caprese Salad",
+      "image": "https://www.wholesomeyum.com/wp-content/uploads/2022/05/wholesomeyum-Caprese-Salad-5.jpg",
+      "category": "Veg",
+      "ingredients": [
+        "Tomatoes, sliced",
+        "Fresh mozzarella, sliced",
+        "Fresh basil leaves",
+        "Balsamic glaze",
+        "Olive oil",
+        "Salt and pepper to taste"
+      ],
+      "instructions": "Arrange alternating slices of tomatoes and mozzarella on a serving platter. Tuck fresh basil leaves between the slices. Drizzle with balsamic glaze and olive oil. Sprinkle with salt and pepper to taste."
+    }
+  ]
+}
