@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:food_recipes/screens/dashboard/dashboard_screen.dart';
 import 'package:food_recipes/utils/app_colors.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-import 'screens/home/home_screen.dart';
 import 'utils/app_fonts.dart';
 
 void main() {
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: AppFonts.lato,
       ),
-      home: const HomeScreen(),
+      home: const DashboardScreen(),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_recipes/utils/app_strings.dart';
+import 'package:food_recipes/controllers/navbar/navbar_controller.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:get/route_manager.dart';
-import 'package:ionicons/ionicons.dart';
 
 import '../../utils/app_colors.dart';
 import '../../widgets/icon_text_column_button.dart';
@@ -23,34 +23,25 @@ class Navbar extends StatelessWidget {
             color: AppColors.white,
             borderRadius: BorderRadius.circular(20),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconTextColumnButton(
-                text: AppStrings.homeString,
-                iconData: Ionicons.home_outline,
-                isSelected: false,
-                onTap: () {},
-              ),
-              IconTextColumnButton(
-                text: AppStrings.allenamentoString,
-                iconData: Icons.fitness_center_outlined,
-                isSelected: false,
-                onTap: () {},
-              ),
-              IconTextColumnButton(
-                text: AppStrings.nutrizioneString,
-                iconData: Icons.apple,
-                isSelected: true,
-                onTap: () {},
-              ),
-              IconTextColumnButton(
-                text: AppStrings.profiloString,
-                iconData: Ionicons.person_circle_outline,
-                isSelected: false,
-                onTap: () {},
-              ),
-            ],
+          child: GetBuilder<NavbarController>(
+            id: 'navbar',
+            init: NavbarController(),
+            initState: (_) {},
+            builder: (_) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  for (int i = 0; i < _.screenNameAndIconList.length; i++) ...[
+                    IconTextColumnButton(
+                      text: _.screenNameAndIconList[i].entries.first.key,
+                      iconData: _.screenNameAndIconList[i].entries.first.value,
+                      isSelected: i == _.selectedIndex,
+                      onTap: () => _.updateSelectedIndex(i),
+                    ),
+                  ],
+                ],
+              );
+            },
           ),
         ),
       ),

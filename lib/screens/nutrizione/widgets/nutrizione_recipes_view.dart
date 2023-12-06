@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_recipes/controllers/home/home_controller.dart';
+import 'package:food_recipes/controllers/nutrizione/nutrizione_controller.dart';
 import 'package:food_recipes/models/recipes_model.dart';
 import 'package:food_recipes/utils/app_colors.dart';
 import 'package:food_recipes/utils/app_strings.dart';
@@ -8,8 +8,8 @@ import 'package:get/get.dart';
 
 import '../../../widgets/recipe_card.dart';
 
-class HomeRecipesView extends GetView<HomeController> {
-  const HomeRecipesView({
+class NutrizioneRecipesView extends GetView<NutrizioneController> {
+  const NutrizioneRecipesView({
     super.key,
   });
 
@@ -31,10 +31,10 @@ class HomeRecipesView extends GetView<HomeController> {
     );
   }
 
-  GetBuilder<HomeController> buildRecipes() {
-    return GetBuilder<HomeController>(
+  GetBuilder<NutrizioneController> buildRecipes() {
+    return GetBuilder<NutrizioneController>(
       id: 'recipes',
-      init: HomeController(),
+      init: NutrizioneController(),
       initState: (_) {},
       builder: (_) {
         return Padding(

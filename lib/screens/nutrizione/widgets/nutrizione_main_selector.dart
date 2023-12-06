@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:food_recipes/controllers/home/home_controller.dart';
+import 'package:food_recipes/controllers/nutrizione/nutrizione_controller.dart';
 import 'package:food_recipes/utils/app_styles.dart';
 import 'package:get/get.dart';
 
 import '../../../utils/app_colors.dart';
 
-class HomeMainSelector extends StatelessWidget {
-  const HomeMainSelector({
+class NutrizioneMainSelector extends StatelessWidget {
+  const NutrizioneMainSelector({
     super.key,
   });
 
@@ -24,9 +24,9 @@ class HomeMainSelector extends StatelessWidget {
             width: 1.5,
           ),
         ),
-        child: GetBuilder<HomeController>(
+        child: GetBuilder<NutrizioneController>(
           id: 'mainSelector',
-          init: HomeController(),
+          init: NutrizioneController(),
           builder: (_) {
             return Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -43,14 +43,14 @@ class HomeMainSelector extends StatelessWidget {
     );
   }
 
-  GestureDetector buildSelector(HomeController _, int i) {
+  GestureDetector buildSelector(NutrizioneController _, int i) {
     return GestureDetector(
       onTap: () => _.updateSelectedMainIndex(i),
       // selection indicator container
       child: Container(
         margin: EdgeInsets.symmetric(vertical: Get.height * 0.002),
         padding: EdgeInsets.symmetric(
-          horizontal: Get.width * 0.075,
+          horizontal: Get.width * 0.072,
           vertical: Get.height * 0.01,
         ),
         decoration: BoxDecoration(
