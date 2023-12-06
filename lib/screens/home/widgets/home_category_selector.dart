@@ -14,7 +14,7 @@ class HomeCategorySelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Get.height * 0.04,
+      height: Get.height * 0.043,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GetBuilder<HomeController>(

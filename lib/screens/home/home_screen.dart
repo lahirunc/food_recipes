@@ -6,6 +6,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/utils.dart';
 import 'package:ionicons/ionicons.dart';
 
+import '../navbar/navbar.dart';
 import 'widgets/home_category_selector.dart';
 import 'widgets/home_main_selector.dart';
 import 'widgets/home_recipes_view.dart';
@@ -18,24 +19,36 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: buildAppBar(),
-      body: SizedBox(
-        width: Get.height,
-        child: Column(
-          children: [
-            SizedBox(height: Get.height * 0.03),
-            // main selector
-            const HomeMainSelector(),
-            Padding(
-              padding: EdgeInsets.only(top: Get.height * 0.01),
-              child: const Divider(color: AppColors.lightGrey),
+      body: Stack(
+        children: [
+          // screen
+          SizedBox(
+            width: Get.height,
+            child: Column(
+              children: [
+                SizedBox(height: Get.height * 0.03),
+                // main selector
+                const HomeMainSelector(),
+                Padding(
+                  padding: EdgeInsets.only(top: Get.height * 0.01),
+                  child: const Divider(color: AppColors.lightGrey),
+                ),
+                // category selector
+                const HomeCategorySelector(),
+                const Divider(color: AppColors.lightGrey),
+                // category selector
+                const HomeRecipesView(),
+              ],
             ),
-            // category selector
-            const HomeCategorySelector(),
-            const Divider(color: AppColors.lightGrey),
-            // category selector
-            const HomeRecipesView(),
-          ],
-        ),
+          ),
+          // navbar
+          Positioned(
+            bottom: Get.height * 0.05,
+            left: Get.width * 0.03,
+            right: Get.width * 0.03,
+            child: const Navbar(),
+          ),
+        ],
       ),
     );
   }

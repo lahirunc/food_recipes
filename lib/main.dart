@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:food_recipes/utils/app_colors.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'screens/home/home_screen.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'Food Recipes',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primaryColor: AppColors.white,
         useMaterial3: true,
         fontFamily: AppFonts.lato,
       ),

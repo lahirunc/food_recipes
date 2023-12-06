@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:food_recipes/models/recipes_model.dart';
 import 'package:food_recipes/utils/app_strings.dart';
@@ -7,7 +8,7 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 
 import '../../models/categories_model.dart';
 
-class HomeController extends GetxController {
+class HomeController extends GetxController with StateMixin {
   //? variables
   //* main selector
   // keep track of the selected index
@@ -33,8 +34,15 @@ class HomeController extends GetxController {
   Future<void> onInit() async {
     await Future.wait([
       getCategories(),
-      getRecipes(),
-    ]);
+      filterRecipes(selectedCategoryIndex),
+    ]).then((value) => {
+          update(['category']),
+          change(
+            [],
+            status:
+                recipesList.isNotEmpty ? RxStatus.success() : RxStatus.empty(),
+          ),
+        });
 
     super.onInit();
   }
@@ -49,15 +57,19 @@ class HomeController extends GetxController {
   //* category selector
   // read the categories json and populate the data into category list
   Future<void> getCategories() async {
-    String? input = await rootBundle.loadString('assets/data/categories.json');
+    try {
+      String? input =
+          await rootBundle.loadString('assets/data/categories.json');
 
-    if (input.isNotEmpty) {
-      final data = CategoriesModel.fromJson(jsonDecode(input));
+      if (input.isNotEmpty) {
+        final data = CategoriesModel.fromJson(jsonDecode(input));
 
-      for (Categories category in (data.categories ?? [])) {
-        if (category.name != null) categoryList.add(category.name!);
+        for (Categories category in (data.categories ?? [])) {
+          if (category.name != null) categoryList.add(category.name!);
+        }
       }
-      update(['category']);
+    } on Exception catch (e) {
+      debugPrint('HomeController[getCategories]: $e');
     }
   }
 
@@ -65,22 +77,50 @@ class HomeController extends GetxController {
   void updateSelectedCategoryIndex(int index) {
     selectedCategoryIndex = index;
     update(['category']);
+
+    filterRecipes(index);
   }
 
   //* recipes
   // read the recipes json and populate the data into recipes list
   Future<void> getRecipes() async {
-    String? input = await rootBundle.loadString('assets/data/recipes.json');
+    try {
+      String? input = await rootBundle.loadString('assets/data/recipes.json');
 
-    if (input.isNotEmpty) {
-      final recipes = jsonDecode(input)['recipes'];
+      if (input.isNotEmpty) {
+        final recipes = jsonDecode(input)['recipes'];
 
-      for (Map<String, dynamic> recipe in recipes) {
-        if (recipe.isNotEmpty) {
-          recipesList.add(RecipesModel.fromJson(recipe));
+        recipesList.clear();
+
+        for (Map<String, dynamic> recipe in recipes) {
+          if (recipe.isNotEmpty) {
+            recipesList.add(RecipesModel.fromJson(recipe));
+          }
         }
       }
-      update();
+    } on Exception catch (e) {
+      change([], status: RxStatus.error());
+      debugPrint('HomeController[getRecipes]: $e');
     }
+  }
+
+  Future<void> filterRecipes(int categoryIndex) async {
+    change([], status: RxStatus.loading());
+
+    String catergory = categoryList[categoryIndex];
+
+    await getRecipes();
+
+    if (catergory.toLowerCase() != 'all') {
+      recipesList = recipesList
+          .where((element) =>
+              element.category?.toLowerCase() == catergory.toLowerCase())
+          .toList();
+    }
+
+    change(
+      [],
+      status: recipesList.isNotEmpty ? RxStatus.success() : RxStatus.empty(),
+    );
   }
 }

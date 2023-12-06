@@ -14,7 +14,9 @@ class AppStrings {
   static const String ricetteString = 'Ricette';
   // category
   static const String allString = 'All';
-
-  // item
+  // recipes
   static const String viewString = 'View';
+  static const String noRecipesFoundString = 'No recipes found 😫';
+  static const String somethingWentWrongString =
+      'Something went wrong. Please try agian!';
 }

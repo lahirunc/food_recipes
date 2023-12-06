@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipes/controllers/home/home_controller.dart';
 import 'package:food_recipes/models/recipes_model.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:food_recipes/utils/app_colors.dart';
+import 'package:food_recipes/utils/app_strings.dart';
+import 'package:food_recipes/utils/app_styles.dart';
+import 'package:get/get.dart';
 
 import '../../../widgets/recipe_card.dart';
 
-class HomeRecipesView extends StatelessWidget {
+class HomeRecipesView extends GetView<HomeController> {
   const HomeRecipesView({
     super.key,
   });
@@ -14,18 +17,37 @@ class HomeRecipesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 10,
-      child: GetBuilder<HomeController>(
-        init: HomeController(),
-        initState: (_) {},
-        builder: (_) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
+      child: controller.obx(
+        (state) => buildRecipes(),
+        onLoading: const Center(
+            child: CircularProgressIndicator(color: AppColors.primary)),
+        onEmpty: Center(
+            child: Text(
+          AppStrings.noRecipesFoundString,
+          style: AppStyles.boldText18FStyle(),
+        )),
+        onError: (error) => const Text(AppStrings.somethingWentWrongString),
+      ),
+    );
+  }
+
+  GetBuilder<HomeController> buildRecipes() {
+    return GetBuilder<HomeController>(
+      id: 'recipes',
+      init: HomeController(),
+      initState: (_) {},
+      builder: (_) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: RefreshIndicator(
+            onRefresh: () => _.filterRecipes(_.selectedCategoryIndex),
+            color: AppColors.primary,
             child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 1 / 1.7,
-                mainAxisSpacing: 8.0, // spacing between rows
-                crossAxisSpacing: 8.0, // spacing between columns
+                mainAxisSpacing: Get.width * 0.012,
+                crossAxisSpacing: Get.height * 0.01,
               ),
               itemCount: _.recipesList.length,
               itemBuilder: (context, index) {
@@ -40,9 +62,9 @@ class HomeRecipesView extends StatelessWidget {
                 );
               },
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

@@ -2,11 +2,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:food_recipes/utils/app_styles.dart';
 import 'package:get/route_manager.dart';
+import 'package:get/utils.dart';
 import 'package:ionicons/ionicons.dart';
 
 import '../utils/app_colors.dart';
 import '../utils/app_strings.dart';
-import 'icon_text.dart';
+import 'icon_text_row_button.dart';
 
 class RecipeCard extends StatelessWidget {
   const RecipeCard({
@@ -30,6 +31,7 @@ class RecipeCard extends StatelessWidget {
       onTap: onTap,
       child: SizedBox(
         child: Card(
+          color: AppColors.white,
           elevation: 2,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -54,7 +56,7 @@ class RecipeCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                IconText(
+                IconTextRowButton(
                   text: AppStrings.viewString,
                   icon: Ionicons.document_outline,
                   onTap: () {},
@@ -72,7 +74,7 @@ class RecipeCard extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: Text(
-        instructions.toUpperCase(),
+        instructions.capitalizeFirst!,
         textAlign: TextAlign.left,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,

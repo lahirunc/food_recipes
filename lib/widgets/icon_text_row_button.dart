@@ -4,8 +4,8 @@ import 'package:get/route_manager.dart';
 import '../utils/app_colors.dart';
 import '../utils/app_styles.dart';
 
-class IconText extends StatelessWidget {
-  const IconText({
+class IconTextRowButton extends StatelessWidget {
+  const IconTextRowButton({
     super.key,
     required this.icon,
     required this.text,
