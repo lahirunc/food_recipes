@@ -38,10 +38,12 @@ class RecipeCard extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+                // image
                 Expanded(
                   flex: 3,
                   child: buildImage(),
                 ),
+                // name and instructions
                 Expanded(
                   flex: 2,
                   child: Column(
@@ -56,6 +58,7 @@ class RecipeCard extends StatelessWidget {
                     ],
                   ),
                 ),
+                // view button
                 IconTextRowButton(
                   text: AppStrings.viewString,
                   icon: Ionicons.document_outline,

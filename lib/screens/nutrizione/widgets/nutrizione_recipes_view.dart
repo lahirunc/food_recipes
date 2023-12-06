@@ -51,6 +51,7 @@ class NutrizioneRecipesView extends GetView<NutrizioneController> {
               ),
               itemCount: _.recipesList.length,
               itemBuilder: (context, index) {
+                // assigning the recipe
                 final RecipesModel recipe = _.recipesList[index];
 
                 return RecipeCard(

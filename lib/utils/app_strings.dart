@@ -7,7 +7,7 @@ class AppStrings {
   static const String allenamentoString = 'Allenamento';
   static const String profiloString = 'Profilo';
 
-  //* home
+  //* nutrizione
   // main selector
   static const String pianoString = 'Piano';
   static const String listaDellaSpesaString = 'Lista della speca';
@@ -19,4 +19,9 @@ class AppStrings {
   static const String noRecipesFoundString = 'No recipes found 😫';
   static const String somethingWentWrongString =
       'Something went wrong. Please try agian!';
+  // tooltip
+  static const String selectTheDesiredCategoryString =
+      'Select the desired category';
+  static const String tooltipDescription =
+      'By selecting categories you can view specific recipes. Give it a try!';
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipes/utils/app_colors.dart';
+import 'package:food_recipes/utils/app_strings.dart';
 import 'package:food_recipes/utils/app_styles.dart';
 import 'package:get/get.dart';
 import 'package:super_tooltip/super_tooltip.dart';
@@ -22,17 +23,20 @@ class NutrizioneCategorySelector extends StatelessWidget {
           init: NutrizioneController(),
           initState: (_) {},
           builder: (_) {
+            // tool tip
             return SuperTooltip(
               controller: _.superToolTipController,
               elevation: 2,
               showBarrier: false,
               backgroundColor: AppColors.secondary,
               content: const ToolTipConent(),
+              // category list
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemCount: _.categoryList.length,
                 itemBuilder: (context, index) => GestureDetector(
                   onTap: () => _.updateSelectedCategoryIndex(index),
+                  // text
                   child: Text(
                     _.categoryList[index],
                     style: AppStyles.boldText18FStyle(
@@ -69,11 +73,13 @@ class ToolTipConent extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // title
               Text(
-                'Select the desired category',
+                AppStrings.selectTheDesiredCategoryString,
                 style: AppStyles.boldText16FStyle()
                     .copyWith(fontWeight: FontWeight.bold),
               ),
+              // close button
               IconButton(
                 onPressed: () => Get.find<NutrizioneController>()
                     .superToolTipController
@@ -82,8 +88,8 @@ class ToolTipConent extends StatelessWidget {
               )
             ],
           ),
-          const Text(
-              'By selecting categories you can view specific recipes. Give it a try!'),
+          // description
+          const Text(AppStrings.tooltipDescription),
         ],
       ),
     );
